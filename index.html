@@ -4,17 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <title>The wheel of doom</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
 
+    <div class="container principal">
+        <header class="titulo">
+         <h1 class="sangrado"> The Wheel Of Doom
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span>
+                <span class="drop"></span> </h1>
+            <audio id="music" src="sonidos/sonido terrorifico.mp3"></audio>
+            <button class="btn_header" onmousedown="music.play()"></button>
 
+        </header>
+        
+        <div class="navigation">
+            <div class="menu">
+                <ul>
+                    <li class="list active">
+                        <span class="icon" style="--clr:rgb(11, 2, 2);"><ion-icon 
+                            name="skull-outline"></ion-icon></span><a
+                            href="nuestro-equipo.html">Nuestro Equipo</a>
 
+                    </li>
+                    <li class="list">
+                        <span class="icon" style="--clr:rgb(14, 9, 4);"><ion-icon
+                                name="skull-outline"></ion-icon></span><a
+                                href="About.html">Nuestra Página</a>
+                    </li>
+                    <li class="list">
+                        <span class="icon" style="--clr:#0b0404;"><ion-icon
+                                name="skull-outline"></ion-icon></span><a href="Como-jugar.html">Como Jugar</a>
+                    </li>
+                    <li class="list">
+                        <span class="icon" style="--clr:#010101;"><ion-icon name="skull-outline"></ion-icon></span><a
+                            href="Dmos-las-Gracias.html">Damos las Gracias</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
+        <div class="containeruno">
+            <div class="imagen principal">
+                <img id="image" img src="imagenes/santamuerte.gif">
+                <audio id="sound" src="sonidos/sonido ruleta.mp3"></audio>
+            </div>
+           <div class="col-md-6">
+                <div id="btn-choose"></div>
+                <div id="result" class="b"></div>
+                <audio id="name-sound" src=""></audio>
+        </div>
+        </div>
+    </div>
 
     
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+
+
  <script src="main.js"></script>  
 </body>
 </html>
