@@ -168,6 +168,7 @@ html:not([data-theme="dark"]) {
     color: #000;
     background-image: url("imagenes/modo\ día.jpg");
     background-size: auto; /* Altura automática, anchura del 100% */
+   /* background-repeat: no-repeat;*/
 }
 
 
@@ -339,6 +340,7 @@ img {
     margin-top: 30px;
     border-radius: 50%;
     transition: transform 1s ease-in-out;
+    
 }
 
 .col-md-6 img{
@@ -372,6 +374,52 @@ img {
     margin-left: 340px;
     margin-top: -90px;
     border-radius: 50%;
+}
+.circle{
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+.circle:before {
+    content: '';
+    position: absolute;
+    left:190px;
+    right:100px;
+    top:-400px;
+    border: 20px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgb(243, 42, 15), inset 0 0 50px rgb(203, 49, 14);
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent,#0002);
+    animation:animate 5s linear infinite;
+
+}
+.circle:nth-child(2):before{
+    align-content: -2.5s;
+}
+@keyframes animate{
+    0%{
+        box-shadow: 0 0 50px rgb(243, 42, 15), inset 0 0 50px rgb(203, 49, 14);
+        filter: hue-rotate(0deg);
+    }
+    20%{
+        box-shadow: 0 0 60px rgb(243, 42, 15), inset 0 0 50px rgb(203, 49, 14);
+
+    }
+    40%{
+        box-shadow: 0 0 40px rgb(243, 42, 15), inset 0 0 50px rgb(203, 49, 14);
+    }
+    60%{
+        
+        box-shadow: 0 0 80px rgb(243, 42, 15), inset 0 0 50px rgb(203, 49, 14);
+    }
+    80%{
+        
+        box-shadow: 0 0 100px rgb(243, 42, 15), inset 0 0 50px rgb(203, 49, 14);
+      }
+    100%{
+        box-shadow: 0 0 50px rgb(243, 42, 15), inset 0 0 50px rgb(203, 49, 14);
+        filter: hue-rotate(360deg);
+    }
 }
 
 .b {
