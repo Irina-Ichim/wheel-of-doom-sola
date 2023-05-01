@@ -430,6 +430,23 @@ img {
     margin-top: -390px;
     color: rgba(70, 19, 19, 0.911);
 }
+/* Modo light */
+html:not([data-theme="dark"]) .b {
+    color: #fff; /* Cambiar color de b en modo light */
+}
+
+/* Modo dark */
+html[data-theme="dark"] .b {
+    color: var(--b-color); /* Cambiar color de b en modo dark */
+}
+/* Modo dark */
+html[data-theme="dark"] {
+    --b-color: blue; /* Definir el color de b en modo dark */
+    background-color: #000;
+    color: white;
+    background-image: url("imagenes/modo\ noche.jpg");
+}
+
 
     @media (max-width: 767px) {
     
