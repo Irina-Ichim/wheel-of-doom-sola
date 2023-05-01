@@ -8,6 +8,7 @@
 
 body {
     font-family: 'Creepster', cursive;
+    overflow: hidden;
 }
 .container-principal{
     display: flex;
@@ -44,7 +45,7 @@ body {
     border-radius: 50%;
     width: 20px;
     height: 20px;
-
+   
 }
 
 .drop {
@@ -162,27 +163,47 @@ body {
     }
 }
 
+#btn-night-mode {
+    background: linear-gradient(to bottom, #ff0080, #a92508);
+    font-family: 'Creepster', cursive;
+    border: none;
+    border-radius: 50px;
+    margin-top: 40px;
+    color: #1d1515;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    position: relative;
+    text-shadow: 0px 0px 5px #ff000096;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #btn-night-mode:hover {
+    background: linear-gradient(to bottom, rgb(80, 3, 19), #670a39);
+    box-shadow: 0px 0px 5px rgba(255, 0, 0, 1), 0px 0px 15px rgba(255, 0, 0, 0.8), 0px 0px 30px rgba(255, 0, 0, 0.6), 0px 0px 60px rgba(255, 0, 0, 0.4);
+    color: #fff;
+    text-shadow: none;
+  }
+  
+
 /* Modo light */
 html:not([data-theme="dark"]) {
-    background-color: #fff;
     color: #000;
+    background-color: hwb(0 40% 60% / 0.885);
     background-image: url("imagenes/modo\ día.jpg");
-    background-size: auto; /* Altura automática, anchura del 100% */
-   /* background-repeat: no-repeat;*/
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
 }
-
-
 
 /* Modo dark */
 html[data-theme="dark"] {
     background-color: #000;
     color: white;
     background-image: url("imagenes/modo\ noche.jpg");
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
 }
 
 
-
-    
 
 .navigation {
     margin-top: 30px;
@@ -340,8 +361,9 @@ img {
     margin-top: 30px;
     border-radius: 50%;
     transition: transform 1s ease-in-out;
-    
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
 }
+
 
 .col-md-6 img{
     height: 100px;
@@ -374,6 +396,11 @@ img {
     margin-left: 340px;
     margin-top: -90px;
     border-radius: 50%;
+    background-color: #4b0082;
+    box-shadow: 0 0 10px #4b0082, 0 0 20px #4b0082, 0 0 40px #4b0082, 0 0 80px #4b0082;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+    letter-spacing: 2px;
 }
 .circle{
     position: relative;
