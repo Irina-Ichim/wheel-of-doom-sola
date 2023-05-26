@@ -1,29 +1,30 @@
+
 let menu = document.querySelector('.menu');
 let navigation = document.querySelector('.navigation');
+
 menu.onclick = function () {
   navigation.classList.toggle('active');
-}
+};
+
 let list = document.querySelectorAll('.list');
+
 function activeLink() {
-  list.forEach((item) =>
-    item.classList.remove('active'));
+  list.forEach((item) => item.classList.remove('active'));
   this.classList.add('active');
 }
-list.forEach((item) =>
-  item.addEventListener('click', activeLink));
 
-  const btnNightMode = document.getElementById("btn-night-mode");
-  const htmlEl = document.querySelector("html");
-  
-  btnNightMode.addEventListener("click", () => {
-      if (htmlEl.getAttribute("data-theme") === "light") {
-          htmlEl.setAttribute("data-theme", "dark");
-      } else {
-          htmlEl.setAttribute("data-theme", "light");
-      }
-  });
-  
+list.forEach((item) => item.addEventListener('click', activeLink));
 
+const btnNightMode = document.getElementById("btn-night-mode");
+const htmlEl = document.querySelector("html");
+
+btnNightMode.addEventListener("click", () => {
+  if (htmlEl.getAttribute("data-theme") === "light") {
+    htmlEl.setAttribute("data-theme", "dark");
+  } else {
+    htmlEl.setAttribute("data-theme", "light");
+  }
+});
 
 let messages = [
   "¡Felicidades, has ganado un premio!",
@@ -46,8 +47,34 @@ let messages = [
   "No te rindas, ¡inténtalo de nuevo!"
 ];
 
+let usedNames = [];
+let names = [
+  "Ikram", "Irina", "Maribel", "Lola", "Javi", "Gabriela", "Pamela", "Manuel", "Minerva",
+  "Nelly", "Jezabel", "Cyntia", "Jhoana", "Irina S.", "Tati", "Nadia", "Halima", "Telma"
+];
+
+let nameSounds = {
+  "Ikram": "sonidos/Ikram.mp3",
+  "Irina": "sonidos/Irina.mp3",
+  "Maribel": "sonidos/Maribel.mp3",
+  "Lola": "sonidos/Lola.mp4",
+  "Javi": "sonidos/Javi.mp4",
+  "Gabriela": "sonidos/Gabriela.mp3",
+  "Pamela": "sonidos/Pamela.mp4",
+  "Manuel": "sonidos/Manuel.mp3",
+  "Minerva": "sonidos/Minerva.mp4",
+  "Nelly": "sonidos/Nelly.mp4",
+  "Jezabel": "sonidos/Jezabel.mp3",
+  "Cyntia": "sonidos/Cyntia.mp3",
+  "Jhoana": "sonidos/Jhoana.mp3",
+  "Irina S.": "sonidos/Irina S.mp3",
+  "Tati": "sonidos/Tati.mp4",
+  "Nadia": "sonidos/Nadia.mp4",
+  "Halima": "sonidos/Halima.mp3",
+  "Telma": "sonidos/Telma.mp4"
+};
+
 function spin() {
-  // Deshabilitar el botón btn-choose mientras se ejecuta spin()
   document.getElementById("btn-choose").disabled = true;
 
   let degrees = 0;
@@ -61,23 +88,6 @@ function spin() {
   image.style.transform = `rotate(${360 * random + degrees}deg)`;
 
   let timeout = setTimeout(function () {
-    let message = messages[Math.floor(Math.random() * messages.length)];
-    let customAlert = document.getElementById('custom-alert');
-    customAlert.textContent = message;
-    customAlert.style.display = 'block';
-    setTimeout(function () {
-      customAlert.style.display = 'none';
-    }, 3000);
-  }, random * 800);
-
-  setTimeout(function () {
-    clearTimeout(timeout);
-    degrees += 360 * random;
-    image.style.transform = `rotate(${degrees}deg)`;
-
-    // Volver a habilitar el botón btn-choose una vez que se ha completado spin()
-    document.getElementById("btn-choose").disabled = false;
-
     let result = document.getElementById("result");
     let nameSound = document.getElementById("name-sound");
 
@@ -103,68 +113,24 @@ function spin() {
       customAlert.style.display = 'block';
       setTimeout(function () {
         customAlert.style.display = 'none';
+        document.getElementById("btn-choose").disabled = false;
       }, 3000);
     };
-  }, 10000);
+  }, random * 800);
+
+  setTimeout(function () {
+    clearTimeout(timeout);
+    degrees += 360 * random;
+    image.style.transform = `rotate(${degrees}deg)`;
+  }, 8000);
 }
 
-
-document.getElementById("btn-choose").addEventListener("click",function () {
+document.getElementById("btn-choose").addEventListener("click", function () {
   spin();
-  generateRandomName();
-  
-})
+});
 
+generateRandomName();
 
-let usedNames = [];
-function generateRandomName() {
-  let result = document.getElementById("result");
-  let nameSound = document.getElementById("name-sound");
-
-
-  if (usedNames.length === names.length) {
-    usedNames = [];
-  }
-
-
-  let randomIndex = Math.floor(Math.random() * names.length);
-  while (usedNames.includes(randomIndex)) {
-    randomIndex = Math.floor(Math.random() * names.length);
-  }
-  usedNames.push(randomIndex);
-  let randomName = names[randomIndex];
-
-
-  nameSound.src = nameSounds[randomName];
-  nameSound.play();
-  nameSound.onended = function () {
-    result.textContent = randomName;
-  };
-}
-
-
-let names = ["Ikram", "Irina", "Maribel", "Lola", "Javi", "Gabriela", "Pamela", "Manuel", "Minerva", "Nelly", "Jezabel", "Cyntia", "Jhoana", "Irina S.", "Tati", "Nadia", "Halima", "Telma"];
-
-let nameSounds = {
-  "Ikram": "sonidos/Ikram.mp3",
-  "Irina": "sonidos/Irina.mp3",
-  "Maribel": "sonidos/Maribel.mp3",
-  "Lola": "sonidos/Lola.mp4",
-  "Javi": "sonidos/Javi.mp4",
-  "Gabriela": "sonidos/Gabriela.mp3",
-  "Pamela": "sonidos/Pamela.mp4",
-  "Manuel": "sonidos/Manuel.mp3",
-  "Minerva": "sonidos/Minerva.mp4",
-  "Nelly": "sonidos/Nelly.mp4",
-  "Jezabel": "sonidos/Jezabel.mp3",
-  "Cyntia": "sonidos/Cyntia.mp3",
-  "Jhoana": "sonidos/Jhoana.mp3",
-  "Irina S.": "sonidos/Irina S.mp3",
-  "Tati": "sonidos/Tati.mp4",
-  "Nadia": "sonidos/Nadia.mp4",
-  "Halima": "sonidos/Halima.mp3",
-  "Telma": "sonidos/Telma.mp4"
-};
 function generateRandomName() {
   let result = document.getElementById("result");
   let nameSound = document.getElementById("name-sound");
@@ -181,22 +147,12 @@ function generateRandomName() {
   let randomName = names[randomIndex];
 
   nameSound.src = nameSounds[randomName];
+  nameSound.play();
   nameSound.onended = function () {
     result.textContent = randomName;
-    let customAlert = document.getElementById('custom-alert');
-    if (usedNames.length === names.length) {
-      customAlert.textContent = "Game Over";
-    } else {
-      let message = messages[Math.floor(Math.random() * messages.length)];
-      customAlert.textContent = message;
-    }
-    customAlert.style.display = 'block';
-    setTimeout(function () {
-      customAlert.style.display = 'none';
-    }, 3000);
   };
-  nameSound.play();
 }
+
 
 
 
