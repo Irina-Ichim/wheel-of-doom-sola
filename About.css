@@ -70,7 +70,7 @@ h1 span:nth-child(7){
 h1{
     
     transform: translateY(-50%);
-    font-size: 45px;
+    font-size: 40px;
     color: red;
     margin-top: -200px;
 }
