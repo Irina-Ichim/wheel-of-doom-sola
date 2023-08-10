@@ -2,7 +2,7 @@
 
 ## Vista Previa en GIF 🎥
 
-![Vista previa del proyecto](/video/The%20wheel%20of%20doom%20-%20Google%20Chrome%202023-08-10%2022-06-26.mp4)
+![Vista previa del proyecto](/video/gif.mp4)
 
 "La Ruleta del Terror" es una aplicación web interactiva que simula una ruleta de la fortuna con un tema de terror y sobrenatural. Los usuarios pueden girar la ruleta y recibir resultados aleatorios acompañados de mensajes y efectos de sonido.
 
