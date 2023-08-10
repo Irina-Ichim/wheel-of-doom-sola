@@ -2,7 +2,7 @@
 
 ## Vista Previa en GIF 🎥
 
-!(/video/gif.mp4)
+![Vista Previa en GIF](/video/gif.mp4)
 
 "La Ruleta del Terror" es una aplicación web interactiva que simula una ruleta de la fortuna con un tema de terror y sobrenatural. Los usuarios pueden girar la ruleta y recibir resultados aleatorios acompañados de mensajes y efectos de sonido.
 
